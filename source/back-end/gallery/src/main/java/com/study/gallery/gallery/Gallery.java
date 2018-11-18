@@ -13,7 +13,7 @@ import lombok.Data;
 @Entity
 @Table(name = "tb_gallery")
 public class Gallery {
-//
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "gallery_id", nullable = false)
