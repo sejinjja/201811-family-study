@@ -1,0 +1,28 @@
+<template>
+  <div>
+    {{getBoardTitle}}
+    <boad-deatil :boardItem="boardItem" v-for="(boardItem, idx) in boadList"></boad-deatil>
+  </div>
+</template>
+
+<script>
+  import BoadDeatil from '@/components/boadDeatil'
+
+  export default {
+    name: 'BoardList',
+    components: { BoadDeatil },
+    computed: {
+      getBoardTitle() {
+        return '우리집 야옹이 소개'
+      }
+    },
+    created() {
+      this.req2svr.getBoardList(1).then((res) => {
+        if (res.data.code === 200)
+          this.boadList = res.data.payload
+        else
+          alert('데이터를 불러 올 수 없습니다.')
+      })
+    }
+  }
+</script>
