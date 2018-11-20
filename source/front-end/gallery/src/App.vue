@@ -6,8 +6,12 @@
 </template>
 
 <script>
+
 export default {
-  name: 'App'
+  name: 'App',
+  created() {
+    console.log('App loaded')
+  },
 }
 </script>
 
